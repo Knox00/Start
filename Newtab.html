@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+        <head>
+		<meta charset="UTF-8">
+                <title>Statr</title>
+                <link rel="shortcut icon" href="http://i.imgur.com/MEzG9zy.png">
+
+                <style type="text/css">
+			*, * * {
+			font-family: Terminus !important;
+			}
+                        body {
+                        background : #333333;
+                        }
+
+                        .keepcentered {
+                        position : absolute;
+                        left : 50%;
+                        top : 50%;
+                        width : 480px;
+                        height : 300px;
+                        margin-left : -240px;
+                        margin-top : -150px;
+                        font-weight : 100;
+                        }
+                        body {
+                        font-style : normal;
+                        color : #1fb3ff;
+                        margin : 5px;
+                        }
+                        td, tr {
+                        width: 25%;
+                        text-align: center;
+		              	font-size: 14px;
+                        }
+                        a {
+                        font-weight: 300;
+                        color : #137cb3;
+                        }
+                        a:hover{
+                        color: #1793d0;
+                        }
+                        a:link {
+                        text-decoration : none;
+                        }
+		              	form {
+		              	position : absolute;
+                        left : 50%;
+                        top : 50%;
+                        width : 240px;
+                        height : 30px;
+                        margin-left : -120px;
+                        margin-top : 100px;
+                        font-weight : 100;
+		              	}
+		              	input {
+		              	background: #333333;
+		              	color: #1793d0;
+		              	border: 2px solid #137cb3;
+		              	border-radius: 4px;
+		            	padding: 0 4px;
+		              	}
+		              	footer {
+                		background-color: #33333300;
+                		width: 100%;
+                   		bottom: 0;
+                   		position: fixed;
+       	        		}
+			
+</style>
+        </head>
+               
+        <body onload="updateClock()">
+                <div class="keepcentered">
+                        <center><font size=72><div id="time"></div></font></center>
+                        <p><center>
+                        <table width="100%" border="0px">
+                                <tr>
+                                        <td>Favourites</td>
+                                        <td>Google</td>
+                                        <td>School</td>
+                                        <td>Torrents</td>
+                                </tr>
+                                <tr>
+                                        <td><a href="http://www.reddit.com">Reddit</a></td>
+										<td><a href="https://www.google.com.au/imghp">Gmail</a></td>
+                                        <td><a href="https://webmail.eq.edu.au/iwc/">MIS Webmail</a></td>
+                                        <td><a href="http://www.kickass.to">Kickass Torrents</a></td>
+
+                                </tr>
+                                <tr>
+                                        <td><a href="http://www.youtube.com">YouTube</a></td>
+                                        <td><a href="https://plus.google.com.au">Google+</a></td>
+                                        <td><a href="https://au-mg5.mail.yahoo.com/neo/launch?reason=ignore&rs=1">Email</a></td>
+                                        <td><a href="http://thepiratebay.se">The Pirate Bay</a></td>
+                                </tr>
+                                <tr>
+                                        <td><a href="http://www.facebook.com">Facebook</a></td>
+                                        <td><a href="http://drive.google.com">Drive</a></td>
+                                        <td><a href="http://education.qld.gov.au/learningplace/">The Learning Place</a></td>
+                                        <td><a href="http://yify-torrents.com/">YIFY Torrents</a></td>
+                                </tr>
+                                <tr>
+                                        <td><a href="https://www.zoklet.net/bbs/index.php">Zoklet</a></td>
+                                        <td><a href="https://www.google.com.au/imghp">Images</a></td>
+                                        <td><a href="http://en.wikipedia.org/wiki/Main_Page">Wikipedia</a></td>
+                                        <td><a href="http://isohunt.to/">ISOHunt</a></td>
+                                </tr>
+                        </table>
+                        <br>
+                        </center>
+                </p>
+</div>
+
+<script>
+        function updateClock()
+        {
+                Date.getMinutesTwoDigits = function()
+                {
+                        var retval = now.getMinutes();
+                        if (retval < 10) return ("0" + retval.toString());
+                        else return retval.toString();
+                }
+                Date.getHoursModTwelve = function()
+                {
+                        var retval = now.getHours();
+                        retval = retval%24;
+                        if (retval == 0) retval = 00;
+                        return retval;
+                }
+                var now = new Date(),
+                time = Date.getHoursModTwelve() + ':' + Date.getMinutesTwoDigits();
+                document.getElementById('time').innerHTML = ["", time].join('');
+                setTimeout(updateClock, 100);
+        }
+</script> 
+
+<form method="get" action="http://www.duckduckgo.com/"> <div style="border:0px solid black;padding:4px;width:100%;"> <table border="0" cellpadding="0"> <tr><td> <input type="search" name="q" size="25" maxlength="255" placeholder="DuckDuckGo Search" color="#1793d0" /> </td></tr> <tr><td align="center" style="font-size:75%"> <br /> </td></tr></table> </div> </form>
+
+</body>
+</html>
